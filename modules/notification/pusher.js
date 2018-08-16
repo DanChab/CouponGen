@@ -8,7 +8,7 @@ let router = express.Router()
 const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/couponizer', (err, db) => {
   
   if (err){
-    return console.log('Unable to connect to MongoDB server');
+    return console.log(`Unable to connect to MongoDB server: error => ${err}`);
   }
   else{
     let collection = db.get('affiliateProducts')
