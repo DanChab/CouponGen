@@ -7,7 +7,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
     if (err) {
         console.error(`Could not connect to mongoDB: error: ${err}`)
     }else {
-        router.post('/userDetails', (req, res) => {
+        router.post('/getInfo', (req, res) => {
             let fbId = req.body.senderId
             let fbName = req.body.userName
 
