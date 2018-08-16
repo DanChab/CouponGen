@@ -38,7 +38,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
                   {
                     "type": "postback",
                     "title": "🔖 Get Coupon ",
-                    "payload": `GET_COUPON#${_id}`
+                    "payload": `GET_COUPON#`
                   }            
                 ]      
               })
