@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
-let usersDetails = require('./modules/users/users')
+let usersDetails = require('./routes/affiliatesUsers')
 
 var app = express();
 
