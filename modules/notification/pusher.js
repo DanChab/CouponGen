@@ -2,6 +2,7 @@ const express = require('express')
 const request = require('request')
 const monk = require('monk')
 
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 let router = express.Router()
 const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/couponizer', (err, db) => {
