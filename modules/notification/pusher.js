@@ -56,6 +56,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
               }
             }
         //Get fbId
+        console.log('//Get fbId')
         let affiliateUsers = db.get('affiliateUsers')
         affiliateUsers.find({}, (err, users) => {
             if (err) throw err
