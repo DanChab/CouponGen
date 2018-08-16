@@ -44,7 +44,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
               })
             })
               let msgContent = {
-                "message":{
+               // "message":{
                 "attachment":{
                   "type":"template",
                   "payload":{
@@ -53,7 +53,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
                     elements
                   }
                 }
-              }
+              //}
             }
         //Get fbId
         
@@ -72,7 +72,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
 })
 
   let sendNotification = (msgContent, senderIds) => {
-    console.log('// Prepare template contnet for messenger and firebase')
+    
     for (let i = 0; i < senderIds.length; i++) {
       const senderId = senderIds[i]
       let messageData = {
