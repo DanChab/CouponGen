@@ -63,7 +63,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
         affiliateUsers.find({}, (err, users) => {
             if (err) throw err
               users.forEach((user) => {
-              senderId = user.fbId
+              let senderId = user.fbId
               senderIds.push(senderId)
           })
       })
