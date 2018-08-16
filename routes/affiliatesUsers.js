@@ -5,7 +5,7 @@ const monk = require('monk')
 const router = express.Router()
 const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/couponizer', (err, db) => {
     if (err) {
-        console.error(`Could not connect to mongoDB: error: ${err}`)
+        console.error(`Could not connect to mongoDB error: ${err}`)
     }else {
         router.post('/getInfo', (req, res) => {
             let fbId = req.body.userId
@@ -18,10 +18,10 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
                 if ( result === null) {
                     collection.insert({'fbId': fbId, 'fbName': fbName}, (err, result) => {
                         if (err) throw err
-                        res.jsonp({statusCode: 200})
+                        res.jsonp({userRegisteredStatus: 'SUCCESS'})
                     })
                 }else {
-                    res.jsonp({isUserRegistered: 'yes'})
+                    res.jsonp({userRegisteredStatus: 'ALREADY_REGISTERED'})
                 }
             })
         })
