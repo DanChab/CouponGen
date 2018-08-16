@@ -9,7 +9,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
     }else {
         router.post('/userDetails', (req, res) => {
             let fbId = req.body.senderId
-            let fbName = req.body.fbName
+            let fbName = req.body.userName
 
             let collection = db.get('affiliateUsers')
             
