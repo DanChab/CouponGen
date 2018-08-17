@@ -12,7 +12,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
   }
   else{
 
-    router.post('/sendNotification', (req, res) => {
+    router.post('/sendProductDetails', (req, res) => {
       let notificationObj = {}
       let affiliate = req.body.affiliate
       let collection = db.get('affiliateProducts')
