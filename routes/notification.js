@@ -14,9 +14,9 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
 
     router.post('/sendProductDetails', (req, res) => {
       let notificationObj = {}
-      let affiliate = req.body.affiliate
+      let affiliateId = req.body.affiliateId
       let collection = db.get('affiliateProducts')
-      collection.find({'affiliate': affiliate}, (err, products) => { 
+      collection.find({'affiliateId': affiliateId}, (err, products) => { 
         if (err) throw err
         console.log(products)
         notificationObj.products = products
@@ -33,6 +33,17 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
             })
         }
     
+      })
+
+    })
+
+    router.post('/affiliateWithNotification', (req, res) => {
+      let hasNotification = req.body.hasNotification
+      let collection = db.get('affiliates')
+      collection.find({hasNotification: hasNotification}, (err, result) => {
+        if (err) throw err
+
+        res.send(result)
       })
 
     })
