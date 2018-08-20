@@ -28,7 +28,7 @@ const db = monk('mongodb://couponizer:C0up0n1z3r123@ds119422.mlab.com:19422/coup
             affiliateUsers.find({}, (err, users) => {
               if (err) throw err
               console.log(JSON.stringify(users, undefined, 2))
-              notificationObj.usersId = users
+              notificationObj.userDetails = users
               res.send(notificationObj)
             })
         }
